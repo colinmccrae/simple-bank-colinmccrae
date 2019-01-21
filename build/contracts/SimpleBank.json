@@ -5,7 +5,8 @@
       "inputs": [],
       "payable": false,
       "stateMutability": "nonpayable",
-      "type": "constructor"
+      "type": "constructor",
+      "signature": "constructor"
     },
     {
       "payable": false,
@@ -16,13 +17,15 @@
       "anonymous": false,
       "inputs": [],
       "name": "LogEnrolled",
-      "type": "event"
+      "type": "event",
+      "signature": "0x6e6775f0cd99d66a7638833e0cf89d3d05958e4bbb550a530c9488c7515771ea"
     },
     {
       "anonymous": false,
       "inputs": [],
       "name": "LogDepositMade",
-      "type": "event"
+      "type": "event",
+      "signature": "0x8038576435f0e365f39497b3c0a20a6003fb1faf839da4fe2ee2372fc684b2d6"
     },
     {
       "constant": false,
@@ -36,7 +39,8 @@
       ],
       "payable": false,
       "stateMutability": "nonpayable",
-      "type": "function"
+      "type": "function",
+      "signature": "0xb69ef8a8"
     },
     {
       "constant": false,
@@ -50,7 +54,8 @@
       ],
       "payable": false,
       "stateMutability": "nonpayable",
-      "type": "function"
+      "type": "function",
+      "signature": "0xe65f2a7e"
     },
     {
       "constant": false,
@@ -64,7 +69,8 @@
       ],
       "payable": false,
       "stateMutability": "nonpayable",
-      "type": "function"
+      "type": "function",
+      "signature": "0xd0e30db0"
     },
     {
       "constant": false,
@@ -83,14 +89,15 @@
       ],
       "payable": false,
       "stateMutability": "nonpayable",
-      "type": "function"
+      "type": "function",
+      "signature": "0x2e1a7d4d"
     }
   ],
-  "bytecode": "0x608060405234801561001057600080fd5b5061018a806100206000396000f3fe608060405260043610610062576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680632e1a7d4d14610074578063b69ef8a8146100c3578063d0e30db0146100ee578063e65f2a7e14610119575b34801561006e57600080fd5b50600080fd5b34801561008057600080fd5b506100ad6004803603602081101561009757600080fd5b8101908080359060200190929190505050610148565b6040518082815260200191505060405180910390f35b3480156100cf57600080fd5b506100d861014f565b6040518082815260200191505060405180910390f35b3480156100fa57600080fd5b50610103610154565b6040518082815260200191505060405180910390f35b34801561012557600080fd5b5061012e610159565b604051808215151515815260200191505060405180910390f35b6000919050565b600090565b600090565b60009056fea165627a7a723058208bd7f93e96497478a51f41914f40a97ebd5cced3b8209781382e6755ac9c49a60029",
-  "deployedBytecode": "0x608060405260043610610062576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680632e1a7d4d14610074578063b69ef8a8146100c3578063d0e30db0146100ee578063e65f2a7e14610119575b34801561006e57600080fd5b50600080fd5b34801561008057600080fd5b506100ad6004803603602081101561009757600080fd5b8101908080359060200190929190505050610148565b6040518082815260200191505060405180910390f35b3480156100cf57600080fd5b506100d861014f565b6040518082815260200191505060405180910390f35b3480156100fa57600080fd5b50610103610154565b6040518082815260200191505060405180910390f35b34801561012557600080fd5b5061012e610159565b604051808215151515815260200191505060405180910390f35b6000919050565b600090565b600090565b60009056fea165627a7a723058208bd7f93e96497478a51f41914f40a97ebd5cced3b8209781382e6755ac9c49a60029",
-  "sourceMap": "324:3029:1:-;;;1343:88;8:9:-1;5:2;;;30:1;27;20:12;5:2;1343:88:1;324:3029;;;;;;",
-  "deployedSourceMap": "324:3029:1:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;324:3029:1;3336:8;;;2672:332;;8:9:-1;5:2;;;30:1;27;20:12;5:2;2672:332:1;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;2672:332:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1631:112;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1631:112:1;;;;;;;;;;;;;;;;;;;;;;;2228:188;;8:9:-1;5:2;;;30:1;27;20:12;5:2;2228:188:1;;;;;;;;;;;;;;;;;;;;;;;1873:46;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1873:46:1;;;;;;;;;;;;;;;;;;;;;;;;;;;2672:332;2727:4;2672:332;;;:::o;1631:112::-;1666:4;1631:112;:::o;2228:188::-;2263:4;2228:188;:::o;1873:46::-;1907:4;1873:46;:::o",
-  "source": "/*\n    This exercise has been updated to use Solidity version 0.5\n    Breaking changes from 0.4 to 0.5 can be found here: \n    https://solidity.readthedocs.io/en/v0.5.0/050-breaking-changes.html\n*/\n\npragma solidity ^0.5.0;\n\n// Testing Git connection\n// Testing Travis\n// Testing Git credentials\n// Testing Get credentials 2\ncontract SimpleBank {\n\n    //\n    // State variables\n    //\n    \n    /* Fill in the keyword. Hint: We want to protect our users balance from other contracts*/\n    mapping (address => uint) balances;\n    \n    /* Fill in the keyword. We want to create a getter function and allow contracts to be able to see if a user is enrolled.  */\n    mapping (address => bool) enrolled;\n\n    /* Let's make sure everyone knows who owns the bank. Use the appropriate keyword for this*/\n    address owner;\n    \n    //\n    // Events - publicize actions to external listeners\n    //\n    \n    /* Add an argument for this event, an accountAddress */\n    event LogEnrolled();\n\n    /* Add 2 arguments for this event, an accountAddress and an amount */\n    event LogDepositMade();\n\n    /* Create an event called LogWithdrawal */\n    /* Add 3 arguments for this event, an accountAddress, withdrawAmount and a newBalance */\n\n\n    //\n    // Functions\n    //\n\n    /* Use the appropriate global variable to get the sender of the transaction */\n    constructor() public {\n        /* Set the owner to the creator of this contract */\n    }\n\n    /// @notice Get balance\n    /// @return The balance of the user\n    // A SPECIAL KEYWORD prevents function from editing state variables;\n    // allows function to run locally/off blockchain\n    function balance() public returns (uint) {\n        /* Get the balance of the sender of this transaction */\n    }\n\n    /// @notice Enroll a customer with the bank\n    /// @return The users enrolled status\n    // Emit the appropriate event\n    function enroll() public returns (bool){\n    }\n\n    /// @notice Deposit ether into bank\n    /// @return The balance of the user after the deposit is made\n    // Add the appropriate keyword so that this function can receive ether\n    // Use the appropriate global variables to get the transaction sender and value\n    // Emit the appropriate event    \n    function deposit() public returns (uint) {\n        /* Add the amount to the user's balance, call the event associated with a deposit,\n          then return the balance of the user */\n    }\n\n    /// @notice Withdraw ether from bank\n    /// @dev This does not return any excess ether sent to it\n    /// @param withdrawAmount amount you want to withdraw\n    /// @return The balance remaining for the user\n    // Emit the appropriate event    \n    function withdraw(uint withdrawAmount) public returns (uint) {\n        /* If the sender's balance is at least the amount they want to withdraw,\n           Subtract the amount from the sender's balance, and try to send that amount of ether\n           to the user attempting to withdraw. \n           return the user's balance.*/\n    }\n\n    // Fallback function - Called if other functions don't match call or\n    // sent ether without data\n    // Typically, called when invalid data is sent\n    // Added so ether sent to this contract is reverted if the contract fails\n    // otherwise, the sender's money is transferred to contract\n    function() external{\n        revert();\n    }\n}\n",
+  "bytecode": "0x608060405234801561001057600080fd5b5061018a806100206000396000f3fe608060405260043610610062576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680632e1a7d4d14610074578063b69ef8a8146100c3578063d0e30db0146100ee578063e65f2a7e14610119575b34801561006e57600080fd5b50600080fd5b34801561008057600080fd5b506100ad6004803603602081101561009757600080fd5b8101908080359060200190929190505050610148565b6040518082815260200191505060405180910390f35b3480156100cf57600080fd5b506100d861014f565b6040518082815260200191505060405180910390f35b3480156100fa57600080fd5b50610103610154565b6040518082815260200191505060405180910390f35b34801561012557600080fd5b5061012e610159565b604051808215151515815260200191505060405180910390f35b6000919050565b600090565b600090565b60009056fea165627a7a72305820306e3faaee9a97fd15fe33228ee86e50f29529207c96c29030e7bb6038d9daad0029",
+  "deployedBytecode": "0x608060405260043610610062576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680632e1a7d4d14610074578063b69ef8a8146100c3578063d0e30db0146100ee578063e65f2a7e14610119575b34801561006e57600080fd5b50600080fd5b34801561008057600080fd5b506100ad6004803603602081101561009757600080fd5b8101908080359060200190929190505050610148565b6040518082815260200191505060405180910390f35b3480156100cf57600080fd5b506100d861014f565b6040518082815260200191505060405180910390f35b3480156100fa57600080fd5b50610103610154565b6040518082815260200191505060405180910390f35b34801561012557600080fd5b5061012e610159565b604051808215151515815260200191505060405180910390f35b6000919050565b600090565b600090565b60009056fea165627a7a72305820306e3faaee9a97fd15fe33228ee86e50f29529207c96c29030e7bb6038d9daad0029",
+  "sourceMap": "224:3030:1:-;;;1244:88;8:9:-1;5:2;;;30:1;27;20:12;5:2;1244:88:1;224:3030;;;;;;",
+  "deployedSourceMap": "224:3030:1:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;224:3030:1;3237:8;;;2573:332;;8:9:-1;5:2;;;30:1;27;20:12;5:2;2573:332:1;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;2573:332:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1532:112;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1532:112:1;;;;;;;;;;;;;;;;;;;;;;;2129:188;;8:9:-1;5:2;;;30:1;27;20:12;5:2;2129:188:1;;;;;;;;;;;;;;;;;;;;;;;1774:46;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1774:46:1;;;;;;;;;;;;;;;;;;;;;;;;;;;2573:332;2628:4;2573:332;;;:::o;1532:112::-;1567:4;1532:112;:::o;2129:188::-;2164:4;2129:188;:::o;1774:46::-;1808:4;1774:46;:::o",
+  "source": "/*\n    This exercise has been updated to use Solidity version 0.5\n    Breaking changes from 0.4 to 0.5 can be found here: \n    https://solidity.readthedocs.io/en/v0.5.0/050-breaking-changes.html\n*/\n\npragma solidity ^0.5.0;\n\ncontract SimpleBank {\n\n    //\n    // State variables\n    //\n    \n    /* Fill in the keyword. Hint: We want to protect our users balance from other contracts*/\n    mapping (address => uint) balances;\n    \n    /* Fill in the keyword. We want to create a getter function and allow contracts to be able to see if a user is enrolled.  */\n    mapping (address => bool) enrolled;\n\n    /* Let's make sure everyone knows who owns the bank. Use the appropriate keyword for this*/\n    address owner;\n    \n    //t\n    // Events - publicize actions to external listeners\n    //\n    \n    /* Add an argument for this event, an accountAddress */\n    event LogEnrolled();\n\n    /* Add 2 arguments for this event, an accountAddress and an amount */\n    event LogDepositMade();\n\n    /* Create an event called LogWithdrawal */\n    /* Add 3 arguments for this event, an accountAddress, withdrawAmount and a newBalance */\n\n\n    //\n    // Functions\n    //\n\n    /* Use the appropriate global variable to get the sender of the transaction */\n    constructor() public {\n        /* Set the owner to the creator of this contract */\n    }\n\n    /// @notice Get balance\n    /// @return The balance of the user\n    // A SPECIAL KEYWORD prevents function from editing state variables;\n    // allows function to run locally/off blockchain\n    function balance() public returns (uint) {\n        /* Get the balance of the sender of this transaction */\n    }\n\n    /// @notice Enroll a customer with the bank\n    /// @return The users enrolled status\n    // Emit the appropriate event\n    function enroll() public returns (bool){\n    }\n\n    /// @notice Deposit ether into bank\n    /// @return The balance of the user after the deposit is made\n    // Add the appropriate keyword so that this function can receive ether\n    // Use the appropriate global variables to get the transaction sender and value\n    // Emit the appropriate event    \n    function deposit() public returns (uint) {\n        /* Add the amount to the user's balance, call the event associated with a deposit,\n          then return the balance of the user */\n    }\n\n    /// @notice Withdraw ether from bank\n    /// @dev This does not return any excess ether sent to it\n    /// @param withdrawAmount amount you want to withdraw\n    /// @return The balance remaining for the user\n    // Emit the appropriate event    \n    function withdraw(uint withdrawAmount) public returns (uint) {\n        /* If the sender's balance is at least the amount they want to withdraw,\n           Subtract the amount from the sender's balance, and try to send that amount of ether\n           to the user attempting to withdraw. \n           return the user's balance.*/\n    }\n\n    // Fallback function - Called if other functions don't match call or\n    // sent ether without data\n    // Typically, called when invalid data is sent\n    // Added so ether sent to this contract is reverted if the contract fails\n    // otherwise, the sender's money is transferred to contract\n    function() external{\n        revert();\n    }\n}\n",
   "sourcePath": "/home/colin/localdev/consensys/simple-bank-colinmccrae/contracts/SimpleBank.sol",
   "ast": {
     "absolutePath": "/home/colin/localdev/consensys/simple-bank-colinmccrae/contracts/SimpleBank.sol",
@@ -132,7 +139,7 @@
             "name": "balances",
             "nodeType": "VariableDeclaration",
             "scope": 110,
-            "src": "487:34:1",
+            "src": "387:34:1",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -145,14 +152,14 @@
                 "id": 59,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
-                "src": "496:7:1",
+                "src": "396:7:1",
                 "typeDescriptions": {
                   "typeIdentifier": "t_address",
                   "typeString": "address"
                 }
               },
               "nodeType": "Mapping",
-              "src": "487:25:1",
+              "src": "387:25:1",
               "typeDescriptions": {
                 "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
                 "typeString": "mapping(address => uint256)"
@@ -161,7 +168,7 @@
                 "id": 60,
                 "name": "uint",
                 "nodeType": "ElementaryTypeName",
-                "src": "507:4:1",
+                "src": "407:4:1",
                 "typeDescriptions": {
                   "typeIdentifier": "t_uint256",
                   "typeString": "uint256"
@@ -177,7 +184,7 @@
             "name": "enrolled",
             "nodeType": "VariableDeclaration",
             "scope": 110,
-            "src": "661:34:1",
+            "src": "561:34:1",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -190,14 +197,14 @@
                 "id": 63,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
-                "src": "670:7:1",
+                "src": "570:7:1",
                 "typeDescriptions": {
                   "typeIdentifier": "t_address",
                   "typeString": "address"
                 }
               },
               "nodeType": "Mapping",
-              "src": "661:25:1",
+              "src": "561:25:1",
               "typeDescriptions": {
                 "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
                 "typeString": "mapping(address => bool)"
@@ -206,7 +213,7 @@
                 "id": 64,
                 "name": "bool",
                 "nodeType": "ElementaryTypeName",
-                "src": "681:4:1",
+                "src": "581:4:1",
                 "typeDescriptions": {
                   "typeIdentifier": "t_bool",
                   "typeString": "bool"
@@ -222,7 +229,7 @@
             "name": "owner",
             "nodeType": "VariableDeclaration",
             "scope": 110,
-            "src": "798:13:1",
+            "src": "698:13:1",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -233,7 +240,7 @@
               "id": 67,
               "name": "address",
               "nodeType": "ElementaryTypeName",
-              "src": "798:7:1",
+              "src": "698:7:1",
               "stateMutability": "nonpayable",
               "typeDescriptions": {
                 "typeIdentifier": "t_address",
@@ -253,9 +260,9 @@
               "id": 69,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "974:2:1"
+              "src": "875:2:1"
             },
-            "src": "957:20:1"
+            "src": "858:20:1"
           },
           {
             "anonymous": false,
@@ -267,15 +274,15 @@
               "id": 71,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1077:2:1"
+              "src": "978:2:1"
             },
-            "src": "1057:23:1"
+            "src": "958:23:1"
           },
           {
             "body": {
               "id": 75,
               "nodeType": "Block",
-              "src": "1364:67:1",
+              "src": "1265:67:1",
               "statements": []
             },
             "documentation": null,
@@ -289,16 +296,16 @@
               "id": 73,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1354:2:1"
+              "src": "1255:2:1"
             },
             "returnParameters": {
               "id": 74,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1364:0:1"
+              "src": "1265:0:1"
             },
             "scope": 110,
-            "src": "1343:88:1",
+            "src": "1244:88:1",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
@@ -307,7 +314,7 @@
             "body": {
               "id": 81,
               "nodeType": "Block",
-              "src": "1672:71:1",
+              "src": "1573:71:1",
               "statements": []
             },
             "documentation": "@notice Get balance\n @return The balance of the user",
@@ -321,7 +328,7 @@
               "id": 77,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1647:2:1"
+              "src": "1548:2:1"
             },
             "returnParameters": {
               "id": 80,
@@ -333,7 +340,7 @@
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "scope": 82,
-                  "src": "1666:4:1",
+                  "src": "1567:4:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -344,7 +351,7 @@
                     "id": 78,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1666:4:1",
+                    "src": "1567:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -354,10 +361,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1665:6:1"
+              "src": "1566:6:1"
             },
             "scope": 110,
-            "src": "1631:112:1",
+            "src": "1532:112:1",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
@@ -366,7 +373,7 @@
             "body": {
               "id": 87,
               "nodeType": "Block",
-              "src": "1912:7:1",
+              "src": "1813:7:1",
               "statements": []
             },
             "documentation": "@notice Enroll a customer with the bank\n @return The users enrolled status",
@@ -380,7 +387,7 @@
               "id": 83,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1888:2:1"
+              "src": "1789:2:1"
             },
             "returnParameters": {
               "id": 86,
@@ -392,7 +399,7 @@
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "scope": 88,
-                  "src": "1907:4:1",
+                  "src": "1808:4:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -403,7 +410,7 @@
                     "id": 84,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1907:4:1",
+                    "src": "1808:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -413,10 +420,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1906:6:1"
+              "src": "1807:6:1"
             },
             "scope": 110,
-            "src": "1873:46:1",
+            "src": "1774:46:1",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
@@ -425,7 +432,7 @@
             "body": {
               "id": 93,
               "nodeType": "Block",
-              "src": "2269:147:1",
+              "src": "2170:147:1",
               "statements": []
             },
             "documentation": "@notice Deposit ether into bank\n @return The balance of the user after the deposit is made",
@@ -439,7 +446,7 @@
               "id": 89,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "2244:2:1"
+              "src": "2145:2:1"
             },
             "returnParameters": {
               "id": 92,
@@ -451,7 +458,7 @@
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "scope": 94,
-                  "src": "2263:4:1",
+                  "src": "2164:4:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -462,7 +469,7 @@
                     "id": 90,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2263:4:1",
+                    "src": "2164:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -472,10 +479,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2262:6:1"
+              "src": "2163:6:1"
             },
             "scope": 110,
-            "src": "2228:188:1",
+            "src": "2129:188:1",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
@@ -484,7 +491,7 @@
             "body": {
               "id": 101,
               "nodeType": "Block",
-              "src": "2733:271:1",
+              "src": "2634:271:1",
               "statements": []
             },
             "documentation": "@notice Withdraw ether from bank\n @dev This does not return any excess ether sent to it\n @param withdrawAmount amount you want to withdraw\n @return The balance remaining for the user",
@@ -504,7 +511,7 @@
                   "name": "withdrawAmount",
                   "nodeType": "VariableDeclaration",
                   "scope": 102,
-                  "src": "2690:19:1",
+                  "src": "2591:19:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -515,7 +522,7 @@
                     "id": 95,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2690:4:1",
+                    "src": "2591:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -525,7 +532,7 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2689:21:1"
+              "src": "2590:21:1"
             },
             "returnParameters": {
               "id": 100,
@@ -537,7 +544,7 @@
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "scope": 102,
-                  "src": "2727:4:1",
+                  "src": "2628:4:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -548,7 +555,7 @@
                     "id": 98,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2727:4:1",
+                    "src": "2628:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -558,10 +565,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2726:6:1"
+              "src": "2627:6:1"
             },
             "scope": 110,
-            "src": "2672:332:1",
+            "src": "2573:332:1",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
@@ -570,7 +577,7 @@
             "body": {
               "id": 108,
               "nodeType": "Block",
-              "src": "3326:25:1",
+              "src": "3227:25:1",
               "statements": [
                 {
                   "expression": {
@@ -586,7 +593,7 @@
                         131
                       ],
                       "referencedDeclaration": 130,
-                      "src": "3336:6:1",
+                      "src": "3237:6:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_revert_pure$__$returns$__$",
                         "typeString": "function () pure"
@@ -600,7 +607,7 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "3336:8:1",
+                    "src": "3237:8:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
@@ -608,7 +615,7 @@
                   },
                   "id": 107,
                   "nodeType": "ExpressionStatement",
-                  "src": "3336:8:1"
+                  "src": "3237:8:1"
                 }
               ]
             },
@@ -623,26 +630,26 @@
               "id": 103,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "3315:2:1"
+              "src": "3216:2:1"
             },
             "returnParameters": {
               "id": 104,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "3326:0:1"
+              "src": "3227:0:1"
             },
             "scope": 110,
-            "src": "3307:44:1",
+            "src": "3208:44:1",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "external"
           }
         ],
         "scope": 111,
-        "src": "324:3029:1"
+        "src": "224:3030:1"
       }
     ],
-    "src": "199:3155:1"
+    "src": "199:3056:1"
   },
   "legacyAST": {
     "absolutePath": "/home/colin/localdev/consensys/simple-bank-colinmccrae/contracts/SimpleBank.sol",
@@ -684,7 +691,7 @@
             "name": "balances",
             "nodeType": "VariableDeclaration",
             "scope": 110,
-            "src": "487:34:1",
+            "src": "387:34:1",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -697,14 +704,14 @@
                 "id": 59,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
-                "src": "496:7:1",
+                "src": "396:7:1",
                 "typeDescriptions": {
                   "typeIdentifier": "t_address",
                   "typeString": "address"
                 }
               },
               "nodeType": "Mapping",
-              "src": "487:25:1",
+              "src": "387:25:1",
               "typeDescriptions": {
                 "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
                 "typeString": "mapping(address => uint256)"
@@ -713,7 +720,7 @@
                 "id": 60,
                 "name": "uint",
                 "nodeType": "ElementaryTypeName",
-                "src": "507:4:1",
+                "src": "407:4:1",
                 "typeDescriptions": {
                   "typeIdentifier": "t_uint256",
                   "typeString": "uint256"
@@ -729,7 +736,7 @@
             "name": "enrolled",
             "nodeType": "VariableDeclaration",
             "scope": 110,
-            "src": "661:34:1",
+            "src": "561:34:1",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -742,14 +749,14 @@
                 "id": 63,
                 "name": "address",
                 "nodeType": "ElementaryTypeName",
-                "src": "670:7:1",
+                "src": "570:7:1",
                 "typeDescriptions": {
                   "typeIdentifier": "t_address",
                   "typeString": "address"
                 }
               },
               "nodeType": "Mapping",
-              "src": "661:25:1",
+              "src": "561:25:1",
               "typeDescriptions": {
                 "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
                 "typeString": "mapping(address => bool)"
@@ -758,7 +765,7 @@
                 "id": 64,
                 "name": "bool",
                 "nodeType": "ElementaryTypeName",
-                "src": "681:4:1",
+                "src": "581:4:1",
                 "typeDescriptions": {
                   "typeIdentifier": "t_bool",
                   "typeString": "bool"
@@ -774,7 +781,7 @@
             "name": "owner",
             "nodeType": "VariableDeclaration",
             "scope": 110,
-            "src": "798:13:1",
+            "src": "698:13:1",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -785,7 +792,7 @@
               "id": 67,
               "name": "address",
               "nodeType": "ElementaryTypeName",
-              "src": "798:7:1",
+              "src": "698:7:1",
               "stateMutability": "nonpayable",
               "typeDescriptions": {
                 "typeIdentifier": "t_address",
@@ -805,9 +812,9 @@
               "id": 69,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "974:2:1"
+              "src": "875:2:1"
             },
-            "src": "957:20:1"
+            "src": "858:20:1"
           },
           {
             "anonymous": false,
@@ -819,15 +826,15 @@
               "id": 71,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1077:2:1"
+              "src": "978:2:1"
             },
-            "src": "1057:23:1"
+            "src": "958:23:1"
           },
           {
             "body": {
               "id": 75,
               "nodeType": "Block",
-              "src": "1364:67:1",
+              "src": "1265:67:1",
               "statements": []
             },
             "documentation": null,
@@ -841,16 +848,16 @@
               "id": 73,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1354:2:1"
+              "src": "1255:2:1"
             },
             "returnParameters": {
               "id": 74,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1364:0:1"
+              "src": "1265:0:1"
             },
             "scope": 110,
-            "src": "1343:88:1",
+            "src": "1244:88:1",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
@@ -859,7 +866,7 @@
             "body": {
               "id": 81,
               "nodeType": "Block",
-              "src": "1672:71:1",
+              "src": "1573:71:1",
               "statements": []
             },
             "documentation": "@notice Get balance\n @return The balance of the user",
@@ -873,7 +880,7 @@
               "id": 77,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1647:2:1"
+              "src": "1548:2:1"
             },
             "returnParameters": {
               "id": 80,
@@ -885,7 +892,7 @@
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "scope": 82,
-                  "src": "1666:4:1",
+                  "src": "1567:4:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -896,7 +903,7 @@
                     "id": 78,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1666:4:1",
+                    "src": "1567:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -906,10 +913,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1665:6:1"
+              "src": "1566:6:1"
             },
             "scope": 110,
-            "src": "1631:112:1",
+            "src": "1532:112:1",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
@@ -918,7 +925,7 @@
             "body": {
               "id": 87,
               "nodeType": "Block",
-              "src": "1912:7:1",
+              "src": "1813:7:1",
               "statements": []
             },
             "documentation": "@notice Enroll a customer with the bank\n @return The users enrolled status",
@@ -932,7 +939,7 @@
               "id": 83,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1888:2:1"
+              "src": "1789:2:1"
             },
             "returnParameters": {
               "id": 86,
@@ -944,7 +951,7 @@
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "scope": 88,
-                  "src": "1907:4:1",
+                  "src": "1808:4:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -955,7 +962,7 @@
                     "id": 84,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1907:4:1",
+                    "src": "1808:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -965,10 +972,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1906:6:1"
+              "src": "1807:6:1"
             },
             "scope": 110,
-            "src": "1873:46:1",
+            "src": "1774:46:1",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
@@ -977,7 +984,7 @@
             "body": {
               "id": 93,
               "nodeType": "Block",
-              "src": "2269:147:1",
+              "src": "2170:147:1",
               "statements": []
             },
             "documentation": "@notice Deposit ether into bank\n @return The balance of the user after the deposit is made",
@@ -991,7 +998,7 @@
               "id": 89,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "2244:2:1"
+              "src": "2145:2:1"
             },
             "returnParameters": {
               "id": 92,
@@ -1003,7 +1010,7 @@
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "scope": 94,
-                  "src": "2263:4:1",
+                  "src": "2164:4:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1014,7 +1021,7 @@
                     "id": 90,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2263:4:1",
+                    "src": "2164:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1024,10 +1031,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2262:6:1"
+              "src": "2163:6:1"
             },
             "scope": 110,
-            "src": "2228:188:1",
+            "src": "2129:188:1",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
@@ -1036,7 +1043,7 @@
             "body": {
               "id": 101,
               "nodeType": "Block",
-              "src": "2733:271:1",
+              "src": "2634:271:1",
               "statements": []
             },
             "documentation": "@notice Withdraw ether from bank\n @dev This does not return any excess ether sent to it\n @param withdrawAmount amount you want to withdraw\n @return The balance remaining for the user",
@@ -1056,7 +1063,7 @@
                   "name": "withdrawAmount",
                   "nodeType": "VariableDeclaration",
                   "scope": 102,
-                  "src": "2690:19:1",
+                  "src": "2591:19:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1067,7 +1074,7 @@
                     "id": 95,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2690:4:1",
+                    "src": "2591:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1077,7 +1084,7 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2689:21:1"
+              "src": "2590:21:1"
             },
             "returnParameters": {
               "id": 100,
@@ -1089,7 +1096,7 @@
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "scope": 102,
-                  "src": "2727:4:1",
+                  "src": "2628:4:1",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1100,7 +1107,7 @@
                     "id": 98,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2727:4:1",
+                    "src": "2628:4:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1110,10 +1117,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2726:6:1"
+              "src": "2627:6:1"
             },
             "scope": 110,
-            "src": "2672:332:1",
+            "src": "2573:332:1",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
@@ -1122,7 +1129,7 @@
             "body": {
               "id": 108,
               "nodeType": "Block",
-              "src": "3326:25:1",
+              "src": "3227:25:1",
               "statements": [
                 {
                   "expression": {
@@ -1138,7 +1145,7 @@
                         131
                       ],
                       "referencedDeclaration": 130,
-                      "src": "3336:6:1",
+                      "src": "3237:6:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_revert_pure$__$returns$__$",
                         "typeString": "function () pure"
@@ -1152,7 +1159,7 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "3336:8:1",
+                    "src": "3237:8:1",
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
                       "typeString": "tuple()"
@@ -1160,7 +1167,7 @@
                   },
                   "id": 107,
                   "nodeType": "ExpressionStatement",
-                  "src": "3336:8:1"
+                  "src": "3237:8:1"
                 }
               ]
             },
@@ -1175,34 +1182,41 @@
               "id": 103,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "3315:2:1"
+              "src": "3216:2:1"
             },
             "returnParameters": {
               "id": 104,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "3326:0:1"
+              "src": "3227:0:1"
             },
             "scope": 110,
-            "src": "3307:44:1",
+            "src": "3208:44:1",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "external"
           }
         ],
         "scope": 111,
-        "src": "324:3029:1"
+        "src": "224:3030:1"
       }
     ],
-    "src": "199:3155:1"
+    "src": "199:3056:1"
   },
   "compiler": {
     "name": "solc",
     "version": "0.5.0+commit.1d4f565a.Emscripten.clang"
   },
-  "networks": {},
+  "networks": {
+    "1548103944464": {
+      "events": {},
+      "links": {},
+      "address": "0x6be49D473f927D87230c4F39dD194DCC2Ba0Ede8",
+      "transactionHash": "0x55e298ca24739663099e02e1b9c822225970b64223bd3c2fd2f2a59ee0d0d770"
+    }
+  },
   "schemaVersion": "3.0.1",
-  "updatedAt": "2019-01-21T20:34:21.846Z",
+  "updatedAt": "2019-01-21T20:54:41.264Z",
   "devdoc": {
     "methods": {
       "balance()": {

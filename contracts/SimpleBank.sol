@@ -7,6 +7,7 @@
 pragma solidity ^0.5.0;
 
 // Testing Git connection
+// Testing Travis
 contract SimpleBank {
 
     //

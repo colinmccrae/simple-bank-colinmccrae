@@ -9,6 +9,7 @@ pragma solidity ^0.5.0;
 // Testing Git connection
 // Testing Travis
 // Testing Git credentials
+// Testing Get credentials 2
 contract SimpleBank {
 
     //
